@@ -7,5 +7,4 @@ const NotFoundPage = () => {
   );
 };
 
-
-export {NotFoundPage};
+export { NotFoundPage };
