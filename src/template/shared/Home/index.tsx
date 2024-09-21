@@ -1,9 +1,11 @@
 import { AboutMe } from "@/components/customCompoent/AboutMe";
 import { Experience } from "@/components/customCompoent/Experience";
 import { Nav } from "@/components/customCompoent/Nav";
-import { userData } from "@/constants/userData";
+import { Projects } from "@/components/customCompoent/Projects";
+import { SectionsEnum, userData } from "@/constants/userData";
 
 const Home = () => {
+
   return (
     <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
       <div className="lg:flex lg:justify-between lg:gap-4">
@@ -26,7 +28,7 @@ const Home = () => {
                 <a
                   className="block hover:text-primary"
                   href={item.link}
-                  target="blank"
+                  target="_blank"
                 >
                   <img className="h-6 w-6" src={item.icon} alt="icon" />
                 </a>
@@ -36,13 +38,14 @@ const Home = () => {
         </header>
         <main id="content" className="pt-24 lg:w-1/2 lg:py-24">
           <AboutMe
-            title={userData.main.about.title}
+            title={SectionsEnum.About}
             content={userData.main.about.content}
           />
           <Experience
-            title="Experience Work"
+            title={SectionsEnum.Experience}
             experiences={userData.experience}
           />
+          <Projects title={SectionsEnum.Projects} projects={[]}/>
         </main>
       </div>
     </div>

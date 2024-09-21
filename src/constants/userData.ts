@@ -26,8 +26,9 @@ interface ComplementUserdata {
   icon: string;
 }
 
-enum Sections {
+export enum SectionsEnum {
   About = "About",
+  Experience = "Experience",
   Projects = "Projects",
   Contact = "Contact",
 }
@@ -40,24 +41,28 @@ export interface ExperienceUserdata {
   employerName: string;
 }
 
+export interface ProjectsUserdata {
+  title: string;
+  content: string[];
+  link: string;
+}
+
 interface UserData {
   self: SelfUserdata;
   job: JobUserdata;
   about: AboutUserdata;
   contact: ContactUserdata;
   complement: ComplementUserdata[];
-  sections: Sections[];
+  sections: SectionsEnum[];
   main: any;
   experience: ExperienceUserdata[];
 }
-
-
 
 export const userData: UserData = {
   self: {
     name: "Gilberto",
     surname: "Antunes",
-    completeName: "Gilberto J. Ferreira Antunes",
+    completeName: "Gilberto Jr. F. Antunes",
   },
   job: {
     position: "Fullstack developer | Software Engineer",
@@ -82,7 +87,11 @@ export const userData: UserData = {
       icon: LinkedInIcon,
     },
   ],
-  sections: Object.values(Sections),
+  sections: [
+    SectionsEnum.About,
+    SectionsEnum.Experience,
+    SectionsEnum.Projects,
+  ],
   main: {
     about: {
       title: "About",
@@ -94,24 +103,24 @@ export const userData: UserData = {
       ],
     },
   },
-  experience:[
+  experience: [
     {
       title: "Software Engineer - Fullstack",
-      date: "jun de 2020 - jul de 2024",
+      date: "2020 - 2024",
       link: "https://www.smartinnovation.com.br/",
       employerName: "Smart Innovation",
       content: [
-        `Com mais de 4 anos na empresa com domino em React, Node e TypeScript, criei soluções de alto impacto, aprimorando interfaces de usuário dinâmicas com React, construindo sistemas backend robustos com Node e otimizando a eficiência por meio de Serverless e Nest. Sou apaixonado por desafios`
-      ]
+        `With over 4 years of experience at the company, I have mastered React, Node, and TypeScript, creating high-impact solutions. I enhanced dynamic user interfaces with React, built robust backend systems with Node, and optimized efficiency through Serverless and NestJS. I am passionate about tackling challenges.`,
+      ],
     },
     {
       title: "Trainee",
-      date: "jun de 2018 - jul de 2020",
+      date: "2018 - 2020",
       link: "https://www.fiec.com.br/",
       employerName: "FIEC",
       content: [
-        `With 2 years at FIEC, I have grown significantly as a professional. I spent 1 year in technical support and computer maintenance at the CPD, followed by another year in software development. During this time, I acquired substantial expertise in both areas.`
-      ]
+        `With 2 years at FIEC, I have grown significantly as a professional. I spent 1 year in technical support and computer maintenance at the CPD, followed by another year in software development. During this time, I acquired substantial expertise in both areas.`,
+      ],
     },
-  ]
+  ],
 };
