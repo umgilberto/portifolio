@@ -1,0 +1,33 @@
+/* Responsividade para o layout da lista de experiências */
+@media (min-width: 640px) {
+  .group {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 8px;
+  }
+  .group .z-10 {
+    grid-column: span 8;
+  }
+}
+
+@media (min-width: 768px) {
+  .group {
+    gap: 4px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .group .hidden {
+    display: block;
+  }
+  .group .group-hover:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Outros estilos responsivos específicos */
+@media (prefers-reduced-motion: reduce) {
+  .transition {
+    transition: none;
+  }
+}
